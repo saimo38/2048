@@ -1,0 +1,11 @@
+.tile {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: var(--radius-tile);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: clamp(14px, 4vw, 28px);
+    transition: background 0.1s;
+}

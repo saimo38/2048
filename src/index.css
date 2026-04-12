@@ -1,0 +1,39 @@
+/* =============================================
+   2048 – globální styly + CSS proměnné
+   ============================================= */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap');
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg:           #FAF8F0;
+  --color-grid:         #BBADA0;
+  --color-cell-empty:   #CDC1B4;
+  --color-primary:      #F5A623;
+  --color-primary-hover:#E0941A;
+  --color-secondary:    #BBADA0;
+  --color-text-dark:    #776E65;
+  --color-text-light:   #F9F6F2;
+  --color-success:      #4CAF50;
+  --color-error:        #E53935;
+
+  --radius-tile:   6px;
+  --radius-card:   10px;
+  --radius-btn:    6px;
+  --radius-modal:  14px;
+
+  --font-main: 'Nunito', 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: var(--color-bg);
+  font-family: var(--font-main);
+  color: var(--color-text-dark);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

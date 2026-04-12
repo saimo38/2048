@@ -6,42 +6,24 @@ import ScoreBoard from "../components/ScoreBoard";
 import GameBoard from "../components/GameBoard";
 import GameOverOverlay from "../components/GameOverOverlay";
 import WinOverlay from "../components/WinOverlay";
-
-type Props = {
-    onNavigate: (screen: AppScreen) => void;
-};
-
+import "../styles/GamePage.css";
+type Props = { onNavigate: (screen: AppScreen) => void; };
 const GamePage = ({ onNavigate }: Props) => {
     const { gameState, handleMove, handleUndo, handleNewGame } = useGameState();
     const isPlaying = gameState.status === "playing";
-
     useKeyboard(handleMove, isPlaying);
     useSwipe(handleMove, isPlaying);
-
     return (
-        <div>
+        <div className="gamepage">
             <ScoreBoard score={gameState.score} bestScore={gameState.bestScore} />
             <GameBoard board={gameState.board} />
-            <button onClick={handleUndo}>Zpět</button>
-            <button onClick={() => onNavigate("menu")}>Quit</button>
-
-            {gameState.status === "lost" && (
-                <GameOverOverlay
-                    score={gameState.score}
-                    onPlayAgain={handleNewGame}
-                    onMenu={() => onNavigate("menu")}
-                />
-            )}
-
-            {gameState.status === "won" && (
-                <WinOverlay
-                    score={gameState.score}
-                    onContinue={() => {}}
-                    onMenu={() => onNavigate("menu")}
-                />
-            )}
+            <div className="gamepage-buttons">
+                <button className="btn-small btn-undo" onClick={handleUndo}>↩ Zpět</button>
+                <button className="btn-small btn-quit" onClick={() => onNavigate("menu")}>🏠 Menu</button>
+            </div>
+            {gameState.status === "lost" && <GameOverOverlay score={gameState.score} onPlayAgain={handleNewGame} onMenu={() => onNavigate("menu")} />}
+            {gameState.status === "won" && <WinOverlay score={gameState.score} onContinue={() => {}} onMenu={() => onNavigate("menu")} />}
         </div>
     );
 };
-
 export default GamePage;

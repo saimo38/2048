@@ -1,0 +1,10 @@
+.gameboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 8px;
+    background: var(--color-grid);
+    border-radius: var(--radius-card);
+    width: 100%;
+    max-width: 360px;
+}

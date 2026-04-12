@@ -1,21 +1,15 @@
-type Props = {
-    score: number;
-    bestScore: number;
-};
-
-const ScoreBoard = ({ score, bestScore }: Props) => {
-    return (
-        <div>
-            <div>
-                <span>Score</span>
-                <span>{score}</span>
-            </div>
-            <div>
-                <span>Best</span>
-                <span>{bestScore}</span>
-            </div>
+import "../styles/ScoreBoard.css";
+type Props = { score: number; bestScore: number; };
+const ScoreBoard = ({ score, bestScore }: Props) => (
+    <div className="scoreboard">
+        <div className="scoreboard-box">
+            <span className="scoreboard-label">SKÓRE</span>
+            <span className="scoreboard-value">{score}</span>
         </div>
-    );
-};
-
+        <div className="scoreboard-box">
+            <span className="scoreboard-label">NEJLEPŠÍ</span>
+            <span className="scoreboard-value">{bestScore}</span>
+        </div>
+    </div>
+);
 export default ScoreBoard;
