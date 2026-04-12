@@ -20,3 +20,5 @@ export type GameState = {
     previousBoard?: Tile[][];  // pro undo (BackButton)
     previousScore?: number;
 };
+
+export type Direction = "left" | "right" | "up" | "down";
