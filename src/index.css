@@ -35,9 +35,21 @@ body {
   min-height: 100vh;
 }
 
+html, body {
+  overscroll-behavior: none;
+  overflow-x: hidden;
+}
+
+.gameboard {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 #app {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
