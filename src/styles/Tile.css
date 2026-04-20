@@ -6,6 +6,35 @@
     align-items: center;
     justify-content: center;
     font-weight: 900;
-    font-size: clamp(14px, 4vw, 28px);
+    font-size: 20px;
+    overflow: hidden;
     transition: background 0.1s;
+}
+
+@media (min-width: 768px) {
+    .tile {
+        font-size: 28px;
+    }
+}
+
+/* Nová dlaždice: pop-in z malé */
+.tile-new {
+    animation: tile-pop 180ms ease-out;
+}
+
+@keyframes tile-pop {
+    0%   { transform: scale(0); }
+    60%  { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Spojené dlaždice: bounce */
+.tile-merged {
+    animation: tile-bounce 180ms ease-in-out;
+}
+
+@keyframes tile-bounce {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.2); }
+    100% { transform: scale(1); }
 }

@@ -8,3 +8,11 @@
     width: 100%;
     max-width: 360px;
 }
+
+@media (min-width: 768px) {
+    .gameboard {
+        max-width: 480px;
+        gap: 14px;
+        padding: 14px;
+    }
+}

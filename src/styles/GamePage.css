@@ -8,6 +8,14 @@
     max-width: 360px;
 }
 
+@media (min-width: 768px) {
+    .gamepage {
+        max-width: 520px;
+        gap: 24px;
+        padding: 48px 24px;
+    }
+}
+
 .gamepage-buttons {
     display: flex;
     gap: 10px;
